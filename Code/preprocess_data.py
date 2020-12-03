@@ -1,14 +1,14 @@
 import numpy as np
 import pandas as pd
 
-def get_kinematics(x, y):
+def get_kinematics(x, z):
 	dx = x - x.shift()
-	dy = y - y.shift()
+	dz = z - z.shift()
 	d2x = dx - dx.shift()
-	d2y = dy - dy.shift()
+	d2z = dz - dz.shift()
 
-	speed = np.sqrt(dx**2 + dy**2)
-	acceleration = np.sqrt(d2x**2 + d2y**2)
+	speed = np.sqrt(dx**2 + dz**2)
+	acceleration = np.sqrt(d2x**2 + d2z**2)
 
 	return speed, acceleration
 
